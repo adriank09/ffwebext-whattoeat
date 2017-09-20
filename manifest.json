@@ -1,0 +1,7 @@
+{
+    "manifest_version": 2,
+    "name": "WhatToEat",
+    "version": "1.0",
+    "description": "What to eat? Foursquare recommends what to eat within 1km of your current presence. (Using Foursquare API)"
+
+}
