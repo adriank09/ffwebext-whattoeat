@@ -1,7 +1,26 @@
 {
+    
     "manifest_version": 2,
-    "name": "WhatToEat",
+    "name": "GrabCoffee",
     "version": "1.0",
-    "description": "What to eat? Foursquare recommends what to eat within 1km of your current presence. (Using Foursquare API)"
-
+    "description": "Grab a cup of coffee! Foursquare recommends within 1km of your current presence. (Using Foursquare API)",
+    "icons": {
+        "48": "icons/48.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "adriank96@outlook.com"
+        }
+    },
+    "background": {
+        "scripts": ["grabcoffee.js"]
+    },
+    "browser_action": {
+        "default_title": "GrabCoffee",
+        "default_popup": "grabcoffee.html"
+    }
+    
 }
