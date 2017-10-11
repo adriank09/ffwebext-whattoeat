@@ -42,11 +42,10 @@ function setCoordinate(position) {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
-        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {        
+            // if everything goes well, load the app  
             loadApp(xhr.responseText);
-
-          }
+        }
     }
 
     xhr.open('get', getFoursquareExploreEndpoint(this_latitude, this_longitude));
@@ -54,6 +53,15 @@ function setCoordinate(position) {
 }
 
 function loadApp(json) {
+    // parse it so we can use it later
     var obj = JSON.parse(json);
-    app.innerHTML = obj.response.headerFullLocation;
+
+    var view = '<div class="panel panel-default"><div class="panel-body">';
+
+        view += '<p>Here are some places to chill in <strong>' + obj.response.headerFullLocation + '</strong>!</p>';
+        
+        // item groups
+
+    view += '</div></div>';
+    app.innerHTML = view;
 }
