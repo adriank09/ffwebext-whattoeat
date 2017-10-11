@@ -8,7 +8,8 @@
         "48": "icons/48.png"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "geolocation"
     ],
     "applications": {
         "gecko": {
