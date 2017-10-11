@@ -24,12 +24,14 @@ window.onload = initApp();
 // Initialize the webext app
 function initApp() {
     
+    // get the geolocation component, and pass the owner's location (lat & lang)
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setCoordinate);
     }
 
 }
 
+// Returns the Foursquare HTTP endpoint
 function getFoursquareExploreEndpoint(lat, long) {
     return "https://api.foursquare.com/v2/venues/explore?ll="+lat+","+long+"&section="+foursquare_explore_section+"&radius="+foursquare_area_radius+"&client_id="+foursquare_client_ID+"&client_secret="+foursquare_client_secret+"&v=20161016";
 }
@@ -52,16 +54,21 @@ function setCoordinate(position) {
     xhr.send();
 }
 
+// Loads the app and render the view
 function loadApp(json) {
     // parse it so we can use it later
     var obj = JSON.parse(json);
-
+    // draw the view
     var view = '<div class="panel panel-default"><div class="panel-body">';
 
         view += '<p>Here are some places to chill in <strong>' + obj.response.headerFullLocation + '</strong>!</p>';
         
         // item groups
+        for(var i = 0; i < obj.response.groups.length; i++) {
+            
+        }
 
     view += '</div></div>';
+    // render it!
     app.innerHTML = view;
 }
