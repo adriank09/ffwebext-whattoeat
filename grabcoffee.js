@@ -9,8 +9,8 @@
 */
 
 // Constant
-var foursquare_client_ID = "R1SLWIBY31S4DXJ1CZ3SNZ1VBPMEKQ3DJ5LP5KX0FY3QRVST";
-var foursquare_client_secret ="CYENH2FDBSD2BLEEHBLQF2P1QTZKITQSUBLUID2AO5HQRA1M";
+var foursquare_client_ID = "XXX"; // replace with your own client ID
+var foursquare_client_secret ="XXX"; // replace with your own client secret
 var foursquare_area_radius = 1000;
 var foursquare_explore_section = "food";
 var this_longitude = '';
@@ -65,7 +65,7 @@ function loadApp(json) {
         
         // item groups
         for(var i = 0; i < obj.response.groups.length; i++) {
-            
+            // do nothing...?
         }
 
     view += '</div></div>';
